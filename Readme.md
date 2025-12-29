@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ## 运行main.py
 
 ```bash
-python3 main.py -s plugins/log.py
-python3 main.py -s plugins/http.py
+python main.py -s plugins/log.py
+python main.py -s plugins/http.py
 
 ```
