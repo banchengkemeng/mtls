@@ -1,4 +1,5 @@
-from tls_hijack.ssl_client import DisconnectionReason
+from tls_hijack.ssl_client import DisconnectionReason, SslClient
+from tls_hijack.ssl_server import SslServer
 
 
 class SslProxyCallback:
@@ -7,7 +8,7 @@ class SslProxyCallback:
         self.host = host
         self.port = port
 
-    def on_connect(self):
+    def on_connect(self, server : SslServer, target_client: SslClient):
         raise NotImplementedError
 
     def on_send_message(self, data: bytearray) -> bytearray:

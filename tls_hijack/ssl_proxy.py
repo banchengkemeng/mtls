@@ -159,7 +159,7 @@ class SslProxy:
 
             # 回调在锁外，避免用户逻辑阻塞其它连接
             try:
-                proxy_cb.on_connect()
+                proxy_cb.on_connect(server, target_client)
             except Exception:
                 # 用户回调异常时，断开本地客户端
                 server.disconnectClient(client_fd)
