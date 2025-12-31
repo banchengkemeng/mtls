@@ -125,3 +125,4 @@ Thumbs.db
 
 tls_client
 tls_server
+hook.so
