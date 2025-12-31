@@ -2,9 +2,13 @@
 
 支持TCP流量的TLS中间人攻击，在网关上游配置路由实现tls流量解密，无需客户端配置（当然证书还是要安装或者patch的），将TLS流量中的加密内容提取实现修改和查看。
 
-通过插件的方式实现功能扩展，目前支持的功能有：
+通过插件的方式实现功能扩展，目前提供的插件有：
 - 打印日志
 ![log](pic/2.png)
+- 解析协议
+![log](pic/3.png)
+![log](pic/4.png)
+![log](pic/5.png)
 - 查看http请求
 ![http](pic/1.png)
 
@@ -72,11 +76,16 @@ options:
 
 ## 使用示例
 
-指定需要执行的插件，项目中携带了两个示例插件，分别是 `log.py` 和 `http.py`( `http.py` 依赖了 `http_ex.py` 提供界面显示，目前没有支持http2.0以及ws)，可以根据需要自行编写插件。
+指定需要执行的插件，项目中携带了三个示例插件
+1. `log.py`
+2. `http.py`( `http.py` 依赖了 `http_ex.py` 提供界面显示，目前没有支持http2.0以及ws)，可以根据需要自行编写插件。
+3. `shark.py` 解析协议 (目前支持常见的一些协议)
 
 ```bash
 # 打印日志
 python mtls.py -s plugins/log.py
+# 解析协议
+python mtls.py -s plugins/shark.py
 # 查看http请求
 python mtls.py -s plugins/http.py
 
