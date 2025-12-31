@@ -13,7 +13,7 @@
 ## 生成证书
 
 ```bash
-./generate_cert.sh
+./generate_certs.sh
 ```
 
 此处将会生成根证书到 `certs/ca-cert.pem`，请将其安装到客户端。
