@@ -122,3 +122,6 @@ Thumbs.db
 *.secret
 *.env
 .env.*
+
+tls_client
+tls_server
